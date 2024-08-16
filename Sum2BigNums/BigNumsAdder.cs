@@ -9,9 +9,15 @@
             string number1 = stn1.TrimStart('0');
             string number2 = stn2.TrimStart('0');
 
-            
-            if (string.IsNullOrEmpty(number1)) number1 = "0";
-            if (string.IsNullOrEmpty(number2)) number2 = "0";
+
+            //if (string.IsNullOrEmpty(number1)) number1 = "0";
+            //if (string.IsNullOrEmpty(number2)) number2 = "0";
+
+            if (string.IsNullOrEmpty(number1) && string.IsNullOrEmpty(number2)) return "0";
+
+            if (string.IsNullOrEmpty(number1)) return number2;
+
+            if (string.IsNullOrEmpty(number2)) return number1;
 
             int len1 = number1.Length;
             int len2 = number2.Length;
@@ -40,10 +46,10 @@
             }
 
             
-            if (string.IsNullOrEmpty(result))
-            {
-                result = "0";
-            }
+            //if (string.IsNullOrEmpty(result))
+            //{
+            //    result = "0";
+            //}
 
 
             return result.TrimStart('0').Length == 0 ? "0" : result.TrimStart('0');

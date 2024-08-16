@@ -22,7 +22,7 @@ namespace Sum2Nums_UnitTest
         public void HandlesCarryOver()
         {
             var adder = new BigNumberAdder();
-            Assert.Equal("100", adder.Sum("99", "1"));
+            Assert.Equal("1000", adder.Sum("999", "1"));
         }
 
         [Fact]
